@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="/static/css/style.css" rel="stylesheet">
     <title>Consulta</title>
 </head>
 <body>
     <table>
+        <tr>
+            <th>codigo</th>
+            <th>descripcion</th>
+            <th>codigo invima</th>
+            <th>codigo cum</th>
+        </tr>
         {%- for row in lts %}
         <tr>
         {%- for column in row %}
