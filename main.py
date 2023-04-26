@@ -28,8 +28,6 @@ class StringGenerator(object):
         query = f"select inventarios_productos.codigo_producto, inventarios_productos.descripcion, inventarios_productos.codigo_invima, medicamentos.codigo_cum from inventarios_productos left join medicamentos on inventarios_productos.codigo_producto = medicamentos.codigo_medicamento where codigo_invima like '%{codigo}%';"
 
         lst = db.connection_db(query)
-        # for i in range(len(lst)):
-        #     return ' \n'.join(map(str, lst))
         templ = env.get_template('consulta.html')
         return templ.render(lts=lst)
 

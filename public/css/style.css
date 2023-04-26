@@ -3,3 +3,11 @@ table, th, td {
   border-collapse: collapse;
   padding: 5px;
 }
+button{
+  padding: 10px;
+  background-color: palegreen;
+  font-family: "Arial Black", serif;
+  font-size: 2em;
+  border-radius: 5px;
+  margin-left: 30px;
+}
