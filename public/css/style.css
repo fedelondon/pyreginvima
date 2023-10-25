@@ -1,13 +1,38 @@
-table, th, td {
+body {
+  margin: 10px;
+  padding: 5px, 5px, 5px, 5px;
+}
+
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
 }
-button{
-  padding: 10px;
-  background-color: palegreen;
-  font-family: "Arial Black", serif;
-  font-size: 2em;
-  border-radius: 5px;
-  margin-left: 30px;
+/* 
+.container {
+  height: 300px;
+  width: 600px;
+  background-color: aquamarine;
+  margin-top: 12%;
+  margin-left: 25%;
+  color: black;
 }
+.container h2 {
+  font-size: 40px;
+  text-align: center;
+}
+.off {
+  font-size: 1em;
+  margin-left: 23%;
+  color: black;
+}
+.on {
+  font-size: 25px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 20px;
+} */

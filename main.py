@@ -6,12 +6,17 @@ from jinja2 import Environment, FileSystemLoader
 
 env = Environment(loader=FileSystemLoader('template'))
 
+def readf(filename):
+    file = open(filename)
+    read = file.read()
+    return read
 
-class StringGenerator(object):
+class InvimaGenerator(object):
     @cherrypy.expose
     def index(self):
         return """<html>
           <head>
+            <link href="/static/css/style.css" rel="stylesheet" type="text/css">
             <title>Consulta codigo invima</title>
           </head>
           <body>
@@ -32,7 +37,17 @@ class StringGenerator(object):
         return templ.render(lts=lst)
 
 
-# Press the green button in the gutter to run the script.
+    @cherrypy.expose
+    def loadfile(self):
+        return open('./template/uploadfile.html')
+
+    @cherrypy.expose
+    def store(self, myFile):
+      readfile = readf(myFile)
+      return readfile
+        
+        
+
 if __name__ == '__main__':
     cherrypy.server.socket_host = '0.0.0.0'
     cherrypy.config.update({'server.socket_port': 5320})
@@ -45,6 +60,6 @@ if __name__ == '__main__':
             'tools.staticdir.dir': './public'
         }
     }
-    cherrypy.quickstart(StringGenerator(), '/', conf)
+    
+    cherrypy.quickstart(InvimaGenerator(), '/', conf)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
